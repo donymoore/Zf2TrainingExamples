@@ -71,7 +71,18 @@ return array(
                     ),  
 
                 )
-            )
+            ),
+            'myModel' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/:animal',
+                    'defaults' => array(
+                        'controller'    => 'Animal',
+                        'action'        => 'animalSays',
+                    ),
+
+                )
+            ),
         ),
     ),
     'service_manager' => array(
@@ -96,7 +107,8 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'HelloWorld'                   => 'Application\Controller\HelloWorldController'
+            'HelloWorld'                   => 'Application\Controller\HelloWorldController',
+            'Animal'                       => 'Application\Controller\AnimalController'
         ),
     ),
     'view_manager' => array(
